@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+    <title>TẦNG NETWORK :: Terminal</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content=" Vai trò, chức năng, nguyên lý hoạt động của Router? Chức năng của Router Kết nối các mạng khác nhau lại với nhau Định tuyến (Routing): Router sử dụng các bảng định tuyến và giao thức định tuyến để tìm và duy trì các đường dẫn tốt nhất cho việc truyền dữ liệu. Chuyển tiếp Gói tin (Packet Forwarding): Router nhận, phân tích và chuyển tiếp các gói tin đến địa chỉ đích. Kiểm soát Truy cập (Access Control): Router sử dụng các quy tắc để cho phép hoặc từ chối các gói tin dựa trên nguồn, đích hoặc nội dung. NAT (Network Address Translation): Router chuyển đổi địa chỉ IP nội bộ sang địa chỉ IP công cộng để giao tiếp với Internet. So sánh sự khác nhau giữa Ipv4 và Ipv6 (VD: độ dài Ipv4, Ipv6 là bao nhiêu bits?, …..) IP là gì
+" />
+<meta name="keywords" content="" />
+
+  <meta name="robots" content="noodp" />
+
+<link rel="canonical" href="https://example.org/posts/posts/t%E1%BA%A7ng-network/" />
+
+
+
+
+
+  
+  <link rel="stylesheet" href="https://example.org/css/buttons.min.2bc533403a27dfe0e93105a92502b42ce4587e2e4a87d9f7d349e51e16e09478.css">
+
+  
+  <link rel="stylesheet" href="https://example.org/css/code.min.00125962708925857e7b66dbc58391d55be1191a3d0ce2034de8c9cd2c481c36.css">
+
+  
+  <link rel="stylesheet" href="https://example.org/css/fonts.min.4881f0c525f3ce2a1864fb6e96676396cebe1e6fcef1933e8e1dde7041004fb5.css">
+
+  
+  <link rel="stylesheet" href="https://example.org/css/footer.min.2e3eb191baee58dd05a9f0104ac1fab0827bca7c64dafe0b2579f934c33a1d69.css">
+
+  
+  <link rel="stylesheet" href="https://example.org/css/gist.min.a751e8b0abe1ba8bc53ced52a38b19d8950fe78ca29454ea8c2595cf26aad5c0.css">
+
+  
+  <link rel="stylesheet" href="https://example.org/css/header.min.b6fb4423cf82a9f9d7abc9cd010223fa3d70a6526a3f28f8e17d814c06e18f9e.css">
+
+  
+  <link rel="stylesheet" href="https://example.org/css/main.min.fe8dc560fccb53a458b0db19ccb7b265764ac46b68596b7e099c6793054dd457.css">
+
+  
+  <link rel="stylesheet" href="https://example.org/css/menu.min.83637a90d903026bc280d3f82f96ceb06c5fc72b7c1a8d686afb5bbf818a29f7.css">
+
+  
+  <link rel="stylesheet" href="https://example.org/css/pagination.min.82f6400eae7c7c6dc3c866733c2ec0579e4089608fea69400ff85b3880aa0d3c.css">
+
+  
+  <link rel="stylesheet" href="https://example.org/css/post.min.fc74ca360273c1d828da3c02b8174eba435607b369d98418ccc6f2243cd4e75d.css">
+
+  
+  <link rel="stylesheet" href="https://example.org/css/prism.min.9023bbc24533d09e97a51a0a42a5a7bfe4c591ae167c5551fb1d2191d11977c0.css">
+
+  
+  <link rel="stylesheet" href="https://example.org/css/syntax.min.cc789ed9377260d7949ea4c18781fc58959a89287210fe4edbff44ebfc1511b6.css">
+
+  
+  <link rel="stylesheet" href="https://example.org/css/terminal.min.4b367d85d0d0061435650561285afed36c46a7cf8dc6d7ed5642d98e589fa622.css">
+
+  
+  <link rel="stylesheet" href="https://example.org/css/terms.min.b81791663c3790e738e571cdbf802312390d30e4b1d8dc9d814a5b5454d0ac11.css">
+
+
+
+
+
+
+
+<link rel="shortcut icon" href="https://example.org/favicon.png">
+<link rel="apple-touch-icon" href="https://example.org/apple-touch-icon.png">
+
+
+<meta name="twitter:card" content="summary" />
+
+  
+    <meta name="twitter:site" content="" />
+  
+    <meta name="twitter:creator" content="" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="TẦNG NETWORK">
+<meta property="og:description" content=" Vai trò, chức năng, nguyên lý hoạt động của Router? Chức năng của Router Kết nối các mạng khác nhau lại với nhau Định tuyến (Routing): Router sử dụng các bảng định tuyến và giao thức định tuyến để tìm và duy trì các đường dẫn tốt nhất cho việc truyền dữ liệu. Chuyển tiếp Gói tin (Packet Forwarding): Router nhận, phân tích và chuyển tiếp các gói tin đến địa chỉ đích. Kiểm soát Truy cập (Access Control): Router sử dụng các quy tắc để cho phép hoặc từ chối các gói tin dựa trên nguồn, đích hoặc nội dung. NAT (Network Address Translation): Router chuyển đổi địa chỉ IP nội bộ sang địa chỉ IP công cộng để giao tiếp với Internet. So sánh sự khác nhau giữa Ipv4 và Ipv6 (VD: độ dài Ipv4, Ipv6 là bao nhiêu bits?, …..) IP là gì
+" />
+<meta property="og:url" content="https://example.org/posts/posts/t%E1%BA%A7ng-network/" />
+<meta property="og:site_name" content="Terminal" />
+
+  <meta property="og:image" content="https://example.org/og-image.png">
+
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+
+
+  <meta property="article:published_time" content="2024-12-30 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+
+
+<div class="container">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    Terminal
+  </div>
+</a>
+
+    </div>
+    
+      <ul class="menu menu--mobile">
+  <li class="menu__trigger">Menu&nbsp;▾</li>
+  <li>
+    <ul class="menu__dropdown">
+      
+        
+          <li><a href="/about">About</a></li>
+        
+      
+        
+          <li><a href="/showcase">Showcase</a></li>
+        
+      
+      
+    </ul>
+  </li>
+</ul>
+
+    
+    
+  </div>
+  
+    <nav class="navigation-menu">
+  <ul class="navigation-menu__inner menu--desktop">
+    
+      
+        
+          <li><a href="/about" >About</a></li>
+        
+      
+        
+          <li><a href="/showcase" >Showcase</a></li>
+        
+      
+      
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<article class="post">
+  <h1 class="post-title">
+    <a href="https://example.org/posts/posts/t%E1%BA%A7ng-network/">TẦNG NETWORK</a>
+  </h1>
+  <div class="post-meta"><time class="post-date">2024-12-30</time></div>
+
+  
+    <span class="post-tags">
+      
+      #<a href="https://example.org/tags/firstblog/">firstblog</a>&nbsp;
+      
+      #<a href="https://example.org/tags/mangmaytinh/">mangmaytinh</a>&nbsp;
+      
+    </span>
+  
+  
+
+
+  
+
+  <div class="post-content"><div>
+        <ol>
+<li><strong>Vai trò, chức năng, nguyên lý hoạt động của Router?</strong></li>
+</ol>
+<ul>
+<li>Chức năng của Router
+<ul>
+<li>Kết nối các mạng khác nhau lại với nhau</li>
+<li><strong>Định tuyến (Routing)</strong>: Router sử dụng các bảng định tuyến và giao thức định tuyến để tìm và duy trì các đường dẫn tốt nhất cho việc truyền dữ liệu.</li>
+<li><strong>Chuyển tiếp Gói tin (Packet Forwarding)</strong>: Router nhận, phân tích và chuyển tiếp các gói tin đến địa chỉ đích.</li>
+<li><strong>Kiểm soát Truy cập (Access Control)</strong>: Router sử dụng các quy tắc để cho phép hoặc từ chối các gói tin dựa trên nguồn, đích hoặc nội dung.</li>
+<li><strong>NAT (Network Address Translation)</strong>: Router chuyển đổi địa chỉ IP nội bộ sang địa chỉ IP công cộng để giao tiếp với Internet.</li>
+</ul>
+</li>
+</ul>
+<ol>
+<li><strong>So sánh sự khác nhau giữa Ipv4 và Ipv6 (VD: độ dài Ipv4, Ipv6 là bao nhiêu bits?, …..)</strong></li>
+</ol>
+<ul>
+<li>
+<p>IP là gì</p>
+<ul>
+<li>Địa chỉ IP là một dãy số</li>
+<li>Mọi thiết bị muốn truy cập và truyền thông tin trên Internet đều cần có một địa chỉ IP để giao tiếp với nhau</li>
+<li>Địa chỉ IP gồm hai phần: Phần Network và Phần Host</li>
+<li>Hai loại IP phổ biến: IPV4 và IPV6</li>
+</ul>
+</li>
+<li>
+<p>IPV4</p>
+<ul>
+<li>IP gồm 32 bit phân cách bằng bốn dấu chấm (VD: 192.168.1.1)</li>
+<li>Mội một cụm số trước dấu chấm được gọi là 1 Octet</li>
+<li>Mỗi Octet có range từ 0-255</li>
+<li>Có 2^32 địa chỉ IPV4 ~ 4,3 tỷ IP</li>
+<li>Máy tính đọc địa chỉ IPV4 bằng số nhị phân (số binary)</li>
+<li>Có 5 lớp trong địa chỉ IPV4:
+<ul>
+<li>Class A,B,C có thể dùng cho Host</li>
+<li>Class D dùng để Multicast</li>
+<li>Class E dùng để Experimental</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">+------+----------------------------+----------------+</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> Class<span style="color:#f92672">|</span>      IP Address Range      <span style="color:#f92672">|</span> Default Subnet <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span>      <span style="color:#f92672">|</span>                            <span style="color:#f92672">|</span>      Mask      <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">+------+----------------------------+----------------+</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span>   A  <span style="color:#f92672">|</span>  <span style="color:#ae81ff">1.0.0.0</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">126.255.255.255</span> <span style="color:#f92672">|</span>  <span style="color:#ae81ff">255.0.0.0</span>     <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span>   B  <span style="color:#f92672">|</span>  <span style="color:#ae81ff">128.0.0.0</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">191.255.255.0</span> <span style="color:#f92672">|</span>  <span style="color:#ae81ff">255.255.0.0</span>   <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span>   C  <span style="color:#f92672">|</span>  <span style="color:#ae81ff">192.0.0.0</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">223.255.255.0</span> <span style="color:#f92672">|</span>  <span style="color:#ae81ff">255.255.255.0</span> <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span>   D  <span style="color:#f92672">|</span>  <span style="color:#ae81ff">224.0.0.0</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">239.255.255.0</span> <span style="color:#f92672">|</span>  Multicast     <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span>   E  <span style="color:#f92672">|</span>  <span style="color:#ae81ff">240.0.0.0</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">255.255.255.0</span> <span style="color:#f92672">|</span>  Reserved      <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">+------+----------------------------+----------------+</span>
+</span></span></code></pre></div></li>
+<li>
+<p>IPV6</p>
+<ul>
+<li>IP gồm 128 bit ở thể thập lục phân</li>
+<li>Có 2^128 địa chỉ IPV6</li>
+<li>Cách chia IPV6</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">+------+-----+</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> Hex  <span style="color:#f92672">|</span> Bin <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">+------+-----+</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span>  <span style="color:#ae81ff">10</span>  <span style="color:#f92672">|</span>  A  <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span>  <span style="color:#ae81ff">11</span>  <span style="color:#f92672">|</span>  B  <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span>  <span style="color:#ae81ff">12</span>  <span style="color:#f92672">|</span>  C  <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span>  <span style="color:#ae81ff">13</span>  <span style="color:#f92672">|</span>  D  <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span>  <span style="color:#ae81ff">14</span>  <span style="color:#f92672">|</span>  E  <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span>  <span style="color:#ae81ff">15</span>  <span style="color:#f92672">|</span>  F  <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">+------+-----+</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">4</span> Bit Chart:
+</span></span><span style="display:flex;"><span><span style="color:#f92672">+---+---+---+---+</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> <span style="color:#ae81ff">8</span> <span style="color:#f92672">|</span> <span style="color:#ae81ff">4</span> <span style="color:#f92672">|</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">|</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">+---+---+---+---+</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">|</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">|</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">|</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">|</span> <span style="color:#f92672">=</span> B (<span style="color:#ae81ff">11</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Binary: <span style="color:#ae81ff">0010</span> <span style="color:#ae81ff">0110</span> <span style="color:#ae81ff">1101</span> <span style="color:#ae81ff">1011</span>
+</span></span><span style="display:flex;"><span>Hex:    <span style="color:#ae81ff">2</span>    <span style="color:#ae81ff">6</span>    D    B
+</span></span></code></pre></div><ul>
+<li>IPIPA
+<ul>
+<li>Viết tắt của Automatic Private IP addressing</li>
+<li>Khi request DHCP fail, máy WINDOW sẽ được tự động gán cho địa chỉ IPIPA</li>
+<li>Địa chỉ này có range từ: 169.254.0.1 - 169.254.255.254 với Subnet Mask: 255.255.0.0</li>
+<li>Địa chỉ IP này sẽ giúp máy liên lạc được với các máy khác trong mạng cục bộ nhưng không vào được Internet hoặc kết nối với máy tính ở mạng khác</li>
+</ul>
+</li>
+<li>Public và Private IP address
+<ul>
+<li>
+<p>Public IP address: Địa chỉ này là có hạn và là độc nhất, khi đi thuê mạng từ các ISP họ sẽ cung cấp cho chúng ta một Public IP Address</p>
+</li>
+<li>
+<p>Private IP address: Địa chỉ này là không độc nhất, Khi ISP cung cấp một địa chỉ Public IP address, bên trong Router có sẵn một giao thức NAT (Network Address Translation) và một DHCP sever: DHCP sever dùng để chia địa chỉ Private cho các thiết bị bên trong sử dụng còn giao thức NAT dịch các địa chỉ Private thành Public mỗi lần có thiết bị nào truy cập vào Internet, điều này giúp tiết kiệm rất nhiều địa chỉ Public IP address</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">+-------+---------------------------+-----------------+</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> Class <span style="color:#f92672">|</span>     IP Address Range      <span style="color:#f92672">|</span> Default Subnet  <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span>       <span style="color:#f92672">|</span>                           <span style="color:#f92672">|</span>      Mask       <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">+-------+---------------------------+-----------------+</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span>   A   <span style="color:#f92672">|</span> <span style="color:#ae81ff">10.0.0.0</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">10.255.255.255</span> <span style="color:#f92672">|</span>  <span style="color:#ae81ff">255.0.0.0</span>      <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span>   B   <span style="color:#f92672">|</span> <span style="color:#ae81ff">172.16.0.0</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">172.31.255.255</span><span style="color:#f92672">|</span>  <span style="color:#ae81ff">255.255.0.0</span>    <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span>   C   <span style="color:#f92672">|</span> <span style="color:#ae81ff">192.168.0.0</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">192.168.255.255</span><span style="color:#f92672">|</span><span style="color:#ae81ff">255.255.255.0</span><span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">+-------+---------------------------+-----------------+</span>
+</span></span></code></pre></div></li>
+</ul>
+</li>
+</ul>
+<ol>
+<li>Các thuật ngữ viết tắt (NAT, ARP, RIP, DNS, IPS,…..)</li>
+</ol>
+<ul>
+<li><strong>NAT (Network Address Translation)</strong>
+<ul>
+<li><strong>Chức năng</strong>: NAT là một kỹ thuật được sử dụng trong mạng máy tính để thay đổi địa chỉ IP nguồn trong các gói tin khi chúng đi qua một bộ định tuyến hoặc cổng tường lửa.</li>
+<li><strong>Mục đích</strong>: Mục đích chính của NAT là bảo tồn địa chỉ IPv4 công cộng và tăng cường bảo mật mạng bằng cách ẩn địa chỉ IP nội bộ.</li>
+<li><strong>Hoạt động</strong>: NAT có thể hiểu đơn giản là một phiên dịch viên đứng giữa và thường được tích hợp vào router. Khi đi đăng kí wifi FPT sẽ cũng cấp cho mỗi nhà một địa chỉ IP công cộng, Địa chỉ IP này đi qua router sẽ được router tạo ra các private IP và dùng DHCP server chia đều cho các thiết bị trong nhà. Tuy nhiên private IP không dùng để truy cập vào Internet được mà chỉ public IP mới làm được vậy nên NAT có mặt để phiên dịch private IP thành public và ngược lại</li>
+</ul>
+</li>
+<li><strong>RIP (Routing Information Protocol)</strong>
+<ul>
+<li><strong>Chức năng</strong>: RIP là một giao thức định tuyến được sử dụng trong các mạng LAN và WAN để giúp các bộ định tuyến chia sẻ thông tin về cấu trúc mạng và chọn đường đi tốt nhất cho dữ liệu.</li>
+<li><strong>Mục đích</strong>: Cung cấp một phương thức đơn giản để các bộ định tuyến trao đổi thông tin định tuyến và duy trì bảng định tuyến.</li>
+<li><strong>Hoạt động</strong>: RIP sử dụng một thuật toán khoảng cách vector, gửi các bản cập nhật bảng định tuyến định kỳ (thường là 30 giây một lần) tới tất cả các bộ định tuyến khác trong mạng. Mỗi bộ định tuyến cập nhật bảng định tuyến của mình dựa trên thông tin nhận được.</li>
+</ul>
+</li>
+<li><strong>IPS (Intrusion Prevention System)</strong>
+<ul>
+<li><strong>Chức năng</strong>: IPS là một hệ thống bảo mật mạng được thiết kế để phát hiện và ngăn chặn các hoạt động tấn công hoặc xâm nhập vào mạng.</li>
+<li><strong>Mục đích</strong>: Bảo vệ mạng khỏi các mối đe dọa bằng cách ngăn chặn các cuộc tấn công trước khi chúng có thể gây ra thiệt hại.</li>
+<li><strong>Hoạt động</strong>: IPS giám sát lưu lượng mạng để tìm các hành vi đáng ngờ hoặc các mẫu tấn công đã biết. Khi phát hiện một mối đe dọa, IPS có thể tự động chặn hoặc ngăn chặn hoạt động đó, gửi cảnh báo cho quản trị viên, và ghi lại chi tiết về sự kiện để phân tích thêm.</li>
+</ul>
+</li>
+<li><strong>IDS (Intrusion Detection System)</strong>
+<ul>
+<li><strong>IDS</strong> (Hệ thống phát hiện xâm nhập) là một hệ thống an ninh mạng được thiết kế để phát hiện các hoạt động bất thường hoặc xâm nhập trong mạng hoặc hệ thống máy tính. IDS hoạt động bằng cách theo dõi, ghi lại và phân tích lưu lượng mạng để phát hiện các dấu hiệu của các hành vi không mong muốn hoặc xâm nhập trái phép.</li>
+</ul>
+</li>
+<li><strong>SPI (Stateful Packet Inspection)</strong>
+<ul>
+<li><strong>SPI</strong> (Kiểm tra gói trạng thái) là một kỹ thuật bảo mật được sử dụng trong tường lửa (firewall) để giám sát các trạng thái của các kết nối mạng. SPI không chỉ kiểm tra các thông tin tiêu đề của các gói dữ liệu (header) mà còn theo dõi trạng thái của các phiên kết nối để đưa ra quyết định chặn hoặc cho phép lưu lượng dựa trên trạng thái của kết nối đó.</li>
+</ul>
+</li>
+</ul>
+<ol>
+<li>
+<p><strong>Thành thạo trong việc chia Subnet, cách tính Subnet Mask, cách chia Subnet bằng kỹ thuật VLSM, ….(nhiều câu hỏi liên quan phần này)</strong></p>
+<p><a href="https://youtube.com/playlist?list=PLTb4KXKc98BYRiUZlzgm4C5LEKyzbhEmL&amp;si=whgj4SyEvnjzJGSU">https://youtube.com/playlist?list=PLTb4KXKc98BYRiUZlzgm4C5LEKyzbhEmL&amp;si=whgj4SyEvnjzJGSU</a></p>
+<ul>
+<li>Note: Xem hết các video trên là chia subnet theo VLSM bao mượt</li>
+</ul>
+</li>
+</ol>
+
+      </div></div>
+
+  
+    
+<div class="pagination">
+  <div class="pagination__title">
+    <span class="pagination__title-h">Read other posts</span>
+    <hr />
+  </div>
+  <div class="pagination__buttons">
+    
+      <a href="https://example.org/posts/posts/t%E1%BA%A7ng-datalink/" class="button inline prev">
+        TẦNG DATA
+      </a>
+    
+    
+      ::
+    
+    
+      <a href="https://example.org/posts/posts/t%E1%BA%A7ng-physical/" class="button inline next">
+        TẦNG PHYSICAL
+      </a>
+    
+  </div>
+</div>
+
+
+  
+
+  
+    
+
+  
+</article>
+
+  </div>
+
+  
+    <footer class="footer">
+  <div class="footer__inner">
+    
+      <div class="copyright">
+        <span>© 2024 Powered by <a href="https://gohugo.io">Hugo</a></span>
+    
+      <span>:: <a href="https://github.com/panr/hugo-theme-terminal" target="_blank">Theme</a> made by <a href="https://github.com/panr" target="_blank">panr</a></span>
+      </div>
+  </div>
+</footer>
+
+
+
+
+
+
+<script type="text/javascript" src="/bundle.min.js"></script>
+
+
+
+
+
+  
+</div>
+
+</body>
+</html>
